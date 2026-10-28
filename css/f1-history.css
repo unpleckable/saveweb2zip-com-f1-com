@@ -1,0 +1,1326 @@
+/* Formula 1 History & Heritage Styling */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --f1-red: #e10600;
+  --f1-red-hover: #ff1801;
+  --f1-black: #15151e;
+  --f1-dark: #101015;
+  --f1-card-bg: #1e1e24;
+  --f1-card-surface: #24242d;
+  --f1-card-hover: #2b2b35;
+  --f1-border: #38383f;
+  --f1-border-subtle: #272730;
+  --f1-text-main: #ffffff;
+  --f1-text-body: #d2d2d6;
+  --f1-text-muted: #949498;
+  --f1-text-dim: #707078;
+}
+
+body {
+  background-color: #15151e !important;
+  color: #ffffff !important;
+  font-family: "Titillium Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Base resets & typography */
+.f1-history-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .f1-history-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.f1-section-spacer {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+section[id] {
+  scroll-margin-top: 70px;
+}
+
+.f1-section-dark-bg {
+  background-color: #101015;
+  border-top: 1px solid #272730;
+  border-bottom: 1px solid #272730;
+}
+
+/* History Hero Section */
+.f1-history-hero {
+  position: relative;
+  background: radial-gradient(circle at 85% 15%, rgba(225, 6, 0, 0.12), transparent 45%),
+              linear-gradient(180deg, #101015 0%, #15151e 100%);
+  border-bottom: 2px solid var(--f1-border-subtle);
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+.f1-history-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--f1-red) 0%, #ff524d 50%, var(--f1-red) 100%);
+  z-index: 10;
+}
+
+.f1-hero-header-block {
+  max-width: 900px;
+  margin-bottom: 32px;
+}
+
+.f1-hero-tag-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.f1-hero-tag-fia {
+  font-family: "Formula1", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--f1-text-muted);
+  letter-spacing: 0.08em;
+}
+
+h1.f1-main-title {
+  font-family: "Formula1Wide", "Formula1", sans-serif !important;
+  font-size: 44px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  margin: 0 0 16px 0 !important;
+  letter-spacing: 0.02em !important;
+}
+
+@media (max-width: 768px) {
+  h1.f1-main-title {
+    font-size: 30px !important;
+  }
+}
+
+.f1-main-subtitle {
+  font-family: "Formula1", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--f1-red) !important;
+  margin: 0 0 24px 0 !important;
+  line-height: 1.4 !important;
+}
+
+.f1-lead-intro {
+  font-family: "Titillium Web", sans-serif !important;
+  font-size: 19px !important;
+  line-height: 1.65 !important;
+  color: #e4e4e7 !important;
+  border-left: 4px solid var(--f1-red) !important;
+  padding-left: 18px !important;
+  margin: 0 0 32px 0 !important;
+}
+
+@media (max-width: 768px) {
+  .f1-lead-intro {
+    font-size: 17px !important;
+  }
+}
+
+.f1-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .f1-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.f1-hero-main-card {
+  background: var(--f1-card-bg);
+  border: 1px solid var(--f1-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.f1-hero-image-wrap {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  background-color: #0c0c10;
+}
+
+@media (max-width: 768px) {
+  .f1-hero-image-wrap {
+    height: 240px;
+  }
+}
+
+.f1-hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.f1-hero-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(30, 30, 36, 0.95) 100%);
+}
+
+.f1-hero-article-body {
+  padding: 32px;
+}
+
+@media (max-width: 768px) {
+  .f1-hero-article-body {
+    padding: 20px;
+  }
+}
+
+.f1-hero-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.f1-milestones-card {
+  background: var(--f1-card-bg);
+  border: 1px solid var(--f1-border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.f1-milestones-card h3 {
+  font-family: "Formula1Wide", "Formula1", sans-serif !important;
+  font-size: 16px !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  border-bottom: 1px solid var(--f1-border-subtle) !important;
+  padding-bottom: 12px !important;
+  margin: 0 0 16px 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.f1-milestone-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.f1-milestone-item {
+  border-bottom: 1px solid var(--f1-border-subtle);
+  padding-bottom: 14px;
+}
+
+.f1-milestone-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.f1-milestone-date {
+  font-family: "Formula1", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--f1-red);
+  display: block;
+  margin-bottom: 3px;
+  letter-spacing: 0.04em;
+}
+
+.f1-milestone-title {
+  font-weight: 600;
+  color: #ffffff;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.f1-milestone-desc {
+  font-size: 13px;
+  color: var(--f1-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.f1-stats-overview-card {
+  background: linear-gradient(135deg, #1e1e24 0%, #15151e 100%);
+  border: 1px solid var(--f1-border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.f1-stats-overview-title {
+  font-family: "Formula1Wide", "Formula1", sans-serif !important;
+  font-size: 15px !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  margin: 0 0 16px 0 !important;
+}
+
+.f1-stats-2x2-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.f1-stat-cell {
+  background: #15151e;
+  padding: 14px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--f1-border-subtle);
+  text-align: center;
+}
+
+.f1-stat-cell-big {
+  font-family: "Formula1", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--f1-red);
+  display: block;
+  line-height: 1.2;
+}
+
+.f1-stat-cell-subtitle {
+  font-family: "Formula1", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--f1-text-muted);
+  letter-spacing: 0.05em;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Sticky Navigation */
+.f1-era-nav-sticky {
+  position: sticky;
+  top: 60px;
+  z-index: 400;
+  background: rgba(16, 16, 21, 0.96);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #272730;
+  border-bottom: 1px solid #272730;
+  padding: 10px 0;
+}
+
+.f1-history-nav-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.f1-history-nav-chips::-webkit-scrollbar {
+  height: 4px;
+}
+
+.f1-history-nav-chips::-webkit-scrollbar-thumb {
+  background: #38383f;
+  border-radius: 2px;
+}
+
+.f1-history-chip {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #1e1e24;
+  border: 1px solid #2e2e38;
+  border-radius: 4px;
+  color: #e0dedc;
+  font-family: "Formula1", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.f1-history-chip:hover {
+  background: var(--f1-red);
+  border-color: var(--f1-red);
+  color: #ffffff;
+}
+
+/* Section Header Styling */
+.f1-section-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 2px solid #272730;
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.f1-section-bar::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 72px;
+  height: 2px;
+  background-color: var(--f1-red);
+}
+
+.f1-section-title {
+  font-family: "Formula1Wide", "Formula1", sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  letter-spacing: 0.03em !important;
+}
+
+@media (max-width: 768px) {
+  .f1-section-title {
+    font-size: 22px !important;
+  }
+}
+
+.f1-section-subtitle {
+  display: block;
+  font-family: "Formula1", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--f1-text-muted);
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+}
+
+/* History Badges & Tags */
+.f1-history-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  background: var(--f1-red);
+  color: #ffffff;
+  font-family: "Formula1", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.f1-history-badge-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--f1-border);
+  color: #e0dedc;
+  font-family: "Formula1", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.f1-era-pill {
+  font-family: "Formula1", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--f1-red);
+  background: rgba(225, 6, 0, 0.12);
+  border: 1px solid rgba(225, 6, 0, 0.3);
+  padding: 4px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+/* ==================== BUTTON-BASED ERA SELECTOR TABS ==================== */
+.f1-era-tabs-wrapper {
+  margin-bottom: 24px;
+}
+
+.f1-era-tabs-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 4px 2px 14px 2px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.f1-era-tabs-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.f1-era-tabs-container::-webkit-scrollbar-track {
+  background: #15151e;
+  border-radius: 3px;
+}
+
+.f1-era-tabs-container::-webkit-scrollbar-thumb {
+  background: #38383f;
+  border-radius: 3px;
+}
+
+.f1-era-tab-btn {
+  background: #1e1e24;
+  border: 1px solid #2e2e38;
+  border-radius: 6px;
+  padding: 12px 20px;
+  color: #d0d0d4;
+  font-family: "Formula1", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  flex-shrink: 0;
+  min-width: 136px;
+  user-select: none;
+  outline: none;
+}
+
+.f1-era-tab-btn:hover {
+  background: #2b2b35;
+  border-color: #484856;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.f1-era-tab-btn.active {
+  background: var(--f1-red);
+  border-color: var(--f1-red);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(225, 6, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.f1-era-tab-badge {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+  font-family: "Formula1", sans-serif;
+}
+
+.f1-era-tab-years {
+  font-size: 15px;
+  font-family: "Formula1Wide", "Formula1", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* Era Panel Visibility */
+.f1-era-panel {
+  display: none;
+}
+
+.f1-era-panel.active {
+  display: block;
+  animation: f1PanelFade 0.25s ease-in-out;
+}
+
+@keyframes f1PanelFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Era Card Inside Panel */
+.f1-era-card {
+  background: var(--f1-card-bg);
+  border: 1px solid var(--f1-border-subtle);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.f1-era-card-header {
+  padding: 22px 32px;
+  background: #24242d;
+  border-bottom: 1px solid #272730;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.f1-era-card-title {
+  font-family: "Formula1Wide", "Formula1", sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  margin: 6px 0 0 0 !important;
+  line-height: 1.25 !important;
+}
+
+@media (max-width: 768px) {
+  .f1-era-card-header {
+    padding: 18px 20px;
+  }
+  .f1-era-card-title {
+    font-size: 18px !important;
+  }
+}
+
+.f1-era-card-body {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .f1-era-card-body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 24px;
+  }
+}
+
+.f1-era-media-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.f1-era-media-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.f1-era-stats-box {
+  background: #15151e;
+  border: 1px solid #272730;
+  border-radius: 6px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.f1-era-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.f1-era-stat-label {
+  font-family: "Formula1", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--f1-text-dim);
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.f1-era-stat-val {
+  font-family: "Formula1", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.f1-era-text-col {
+  min-width: 0;
+}
+
+/* Era Pagination / Pager Footer */
+.f1-era-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #272730;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.f1-era-pager-btn {
+  background: #15151e;
+  border: 1px solid #2e2e38;
+  border-radius: 6px;
+  padding: 11px 20px;
+  color: #ffffff;
+  font-family: "Formula1", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.f1-era-pager-btn:hover:not(:disabled) {
+  background: var(--f1-red);
+  border-color: var(--f1-red);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(225, 6, 0, 0.35);
+}
+
+.f1-era-pager-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: #272730;
+}
+
+.f1-era-pager-counter {
+  font-family: "Formula1", sans-serif;
+  font-size: 12px;
+  color: var(--f1-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Prose & Reading Flow */
+.f1-history-prose {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #d0d0d4;
+}
+
+.f1-history-prose p {
+  margin: 0 0 18px 0 !important;
+  font-family: "Titillium Web", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+  color: #d0d0d4 !important;
+}
+
+.f1-history-prose p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.f1-prose-lead {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+  border-left: 3px solid var(--f1-red) !important;
+  padding-left: 14px !important;
+  margin: 0 0 20px 0 !important;
+}
+
+.f1-history-quote {
+  margin: 24px 0 !important;
+  padding: 16px 20px !important;
+  background: rgba(225, 6, 0, 0.08) !important;
+  border-left: 4px solid var(--f1-red) !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+
+.f1-history-quote p {
+  font-family: "Titillium Web", sans-serif !important;
+  font-size: 17px !important;
+  font-style: italic !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.f1-history-quote cite {
+  display: block;
+  font-family: "Formula1", sans-serif !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--f1-text-muted) !important;
+}
+
+/* Hall of Fame Driver Profiles */
+.f1-drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+@media (max-width: 1050px) {
+  .f1-drivers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .f1-drivers-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.f1-driver-card {
+  background: var(--f1-card-bg);
+  border: 1px solid var(--f1-border-subtle);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.f1-driver-card:hover {
+  border-color: var(--f1-red);
+  transform: translateY(-2px);
+}
+
+.f1-driver-header {
+  padding: 20px 24px;
+  background: #24242d;
+  border-bottom: 1px solid #272730;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.f1-driver-name {
+  font-family: "Formula1Wide", "Formula1", sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  margin: 4px 0 2px 0 !important;
+  line-height: 1.15 !important;
+}
+
+.f1-driver-nationality {
+  font-family: "Formula1", sans-serif;
+  font-size: 12px;
+  color: var(--f1-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.f1-driver-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.f1-driver-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  background: #15151e;
+  border: 1px solid #272730;
+  border-radius: 6px;
+  padding: 12px 6px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.f1-stat-cell-num {
+  font-family: "Formula1", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--f1-red);
+  display: block;
+  line-height: 1.2;
+}
+
+.f1-stat-cell-label {
+  font-family: "Formula1", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--f1-text-dim);
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+/* Technical Essays */
+.f1-tech-article {
+  background: var(--f1-card-bg);
+  border: 1px solid var(--f1-border-subtle);
+  border-radius: 8px;
+  padding: 36px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+  .f1-tech-article {
+    padding: 24px;
+  }
+}
+
+.f1-tech-title {
+  font-family: "Formula1Wide", "Formula1", sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  margin: 8px 0 6px 0 !important;
+  line-height: 1.25 !important;
+}
+
+.f1-tech-subtitle {
+  font-family: "Formula1", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--f1-red);
+  letter-spacing: 0.05em;
+  margin: 0 0 24px 0;
+}
+
+.f1-tech-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px;
+}
+
+@media (max-width: 850px) {
+  .f1-tech-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Historic Circuit Dossiers */
+.f1-circuits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+@media (max-width: 1050px) {
+  .f1-circuits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .f1-circuits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.f1-circuit-card {
+  background: var(--f1-card-bg);
+  border: 1px solid var(--f1-border-subtle);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.f1-circuit-header {
+  padding: 18px 24px;
+  background: #24242d;
+  border-bottom: 1px solid #272730;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.f1-circuit-title {
+  font-family: "Formula1Wide", "Formula1", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  margin: 4px 0 0 0 !important;
+}
+
+.f1-circuit-body {
+  padding: 24px;
+}
+
+.f1-circuit-corners {
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Champions Records Table */
+.f1-table-wrapper {
+  width: 100%;
+  background: var(--f1-card-bg);
+  border: 1px solid var(--f1-border-subtle);
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.f1-records-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.f1-records-table th {
+  font-family: "Formula1", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background: #24242d;
+  padding: 16px 20px;
+  border-bottom: 2px solid var(--f1-red);
+}
+
+.f1-records-table td {
+  padding: 13px 20px;
+  border-bottom: 1px solid #272730;
+  color: #d0d0d4;
+  font-size: 14px;
+}
+
+.f1-records-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+  color: #ffffff;
+}
+
+.f1-table-year {
+  font-family: "Formula1", sans-serif;
+  font-weight: 700;
+  color: var(--f1-red);
+}
+
+.f1-table-champion {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.f1-table-team {
+  font-family: "Formula1", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #a0a0a5;
+}
+
+/* Historical Lore Grid */
+.f1-lore-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 850px) {
+  .f1-lore-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.f1-lore-card {
+  background: var(--f1-card-bg);
+  border: 1px solid var(--f1-border-subtle);
+  border-radius: 8px;
+  padding: 32px;
+}
+
+/* ==================== F1 HISTORY SITE HEADER ==================== */
+.f1-site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  background: rgba(16, 16, 21, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #272730;
+  height: 60px;
+}
+
+.f1-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.f1-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.f1-header-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.f1-header-f1-logo {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.f1-header-divider {
+  display: inline-block;
+  width: 1px;
+  height: 22px;
+  background: #38383f;
+}
+
+.f1-header-title-badge {
+  font-family: "Formula1Wide", "Formula1", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+  background: rgba(225, 6, 0, 0.15);
+  border: 1px solid rgba(225, 6, 0, 0.4);
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+.f1-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+}
+
+.f1-header-nav-link {
+  font-family: "Formula1", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #d0d0d4;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.f1-header-nav-link:hover {
+  color: #ffffff;
+}
+
+.f1-header-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--f1-red);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.f1-header-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.f1-header-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.f1-header-fia-link {
+  display: flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.f1-header-fia-link:hover {
+  opacity: 1;
+}
+
+.f1-header-fia-svg {
+  height: 26px;
+  width: auto;
+}
+
+@media (max-width: 992px) {
+  .f1-header-nav {
+    display: none;
+  }
+}
+
+/* ==================== MINIMAL FOOTER ==================== */
+.f1-minimal-footer {
+  background: #0d0d12;
+  border-top: 1px solid #272730;
+  padding: 40px 0 32px 0;
+  margin-top: 0;
+}
+
+.f1-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #1e1e26;
+}
+
+.f1-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.f1-footer-f1-logo {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+
+.f1-footer-tagline {
+  font-family: "Formula1", sans-serif;
+  font-size: 11px;
+  color: var(--f1-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.f1-footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.f1-footer-nav a {
+  font-family: "Formula1", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a0a0ab;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+
+.f1-footer-nav a:hover {
+  color: #ffffff;
+}
+
+.f1-footer-top-btn {
+  color: var(--f1-red) !important;
+  border: 1px solid rgba(225, 6, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 3px;
+  background: rgba(225, 6, 0, 0.08);
+  transition: all 0.2s ease !important;
+}
+
+.f1-footer-top-btn:hover {
+  background: var(--f1-red) !important;
+  color: #ffffff !important;
+}
+
+.f1-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 20px;
+}
+
+.f1-footer-copy {
+  margin: 0 !important;
+  font-family: "Titillium Web", sans-serif !important;
+  font-size: 13px !important;
+  color: #7b7b85 !important;
+  line-height: 1.4 !important;
+}
+
+.f1-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #555562;
+}
+
+.f1-footer-legal a {
+  color: #7b7b85;
+  text-decoration: none;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 12px;
+  transition: color 0.15s ease;
+}
+
+.f1-footer-legal a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+

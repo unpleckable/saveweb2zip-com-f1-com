@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -190,25 +190,8 @@
   </section>
 
   <!-- ==================== THE GREAT ERAS CHRONICLE (BUTTON-BASED INTERACTIVE TABS) ==================== -->
-  <section id="eras-chronicle" class="f1-section-spacer" style="padding-top: 0;">
-    
-    <!-- STICKY ERA SUB-HEADER (ONLY ACTIVE & VISIBLE WITHIN ERAS SECTION) -->
-    <nav class="f1-era-nav-sticky">
-      <div class="f1-history-container">
-        <div class="f1-history-nav-chips">
-          <a href="#era-1950s" class="f1-history-chip" onclick="selectEra('era-1950s')">1950s: Genesis</a>
-          <a href="#era-1960s" class="f1-history-chip" onclick="selectEra('era-1960s')">1960s: Mid-Engine</a>
-          <a href="#era-1970s" class="f1-history-chip" onclick="selectEra('era-1970s')">1970s: Ground Effect</a>
-          <a href="#era-1980s" class="f1-history-chip" onclick="selectEra('era-1980s')">1980s: Turbos</a>
-          <a href="#era-1990s" class="f1-history-chip" onclick="selectEra('era-1990s')">1990s: Electronics</a>
-          <a href="#era-2000s" class="f1-history-chip" onclick="selectEra('era-2000s')">2000s: V10 Peak</a>
-          <a href="#era-2010s" class="f1-history-chip" onclick="selectEra('era-2010s')">2010s: Turbo-Hybrid</a>
-          <a href="#era-2020s" class="f1-history-chip" onclick="selectEra('era-2020s')">2020s: Ground Effect 2.0</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="f1-history-container" style="padding-top: 36px;">
+  <section id="eras-chronicle" class="f1-section-spacer">
+    <div class="f1-history-container">
       
       <div class="f1-section-bar">
         <div>
@@ -2097,47 +2080,38 @@
         }
       });
 
-      // 3. Highlight top sticky chip
-      var chips = document.querySelectorAll('.f1-history-nav-chips a');
-      chips.forEach(function(chip) {
-        var href = chip.getAttribute('href');
-        if (href === '#' + eraId) {
-          chip.style.backgroundColor = 'var(--f1-red)';
-          chip.style.borderColor = 'var(--f1-red)';
-          chip.style.color = '#ffffff';
-        } else if (href && href.indexOf('#era-') === 0) {
-          chip.style.backgroundColor = '';
-          chip.style.borderColor = '';
-          chip.style.color = '';
-        }
-      });
-
-      // 4. Smooth scroll if requested
+      // 3. Smooth scroll if requested
       if (doScroll) {
         var section = document.getElementById('eras-chronicle');
         if (section) {
-          var yOffset = -130;
+          var yOffset = -70;
           var y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }
     };
 
-    // Attach click listeners to sticky chips
-    document.addEventListener('DOMContentLoaded', function() {
-      var chips = document.querySelectorAll('.f1-history-nav-chips a');
-      chips.forEach(function(chip) {
-        var href = chip.getAttribute('href');
-        if (href && href.indexOf('#era-') === 0) {
-          chip.addEventListener('click', function(e) {
-            e.preventDefault();
-            var targetId = href.replace('#', '');
-            selectEra(targetId, true);
-          });
-        }
-      // Initialize active chip highlight
+    function initEras() {
+      // Attach click listeners to era tab buttons
+      var tabBtns = document.querySelectorAll('.f1-era-tab-btn');
+      tabBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var targetEra = btn.getAttribute('data-era');
+          if (targetEra) {
+            selectEra(targetEra, false);
+          }
+        });
+      });
+
+      // Initialize default active era tab and panel
       selectEra('era-1950s', false);
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initEras);
+    } else {
+      initEras();
+    }
   })();
 </script>
 </body>

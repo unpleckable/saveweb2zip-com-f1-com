@@ -467,7 +467,8 @@ h1.f1-main-title {
   transition: all 0.2s ease;
 }
 
-.f1-history-chip:hover {
+.f1-history-chip:hover,
+.f1-history-chip.active {
   background: var(--f1-red);
   border-color: var(--f1-red);
   color: #ffffff;

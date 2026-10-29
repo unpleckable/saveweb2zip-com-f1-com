@@ -7,6 +7,7 @@
 :root {
   --f1-red: #e10600;
   --f1-red-hover: #ff1801;
+  --f1-red-dark: #b30500;
   --f1-black: #15151e;
   --f1-dark: #101015;
   --f1-card-bg: #1e1e24;
@@ -18,6 +19,86 @@
   --f1-text-body: #d2d2d6;
   --f1-text-muted: #949498;
   --f1-text-dim: #707078;
+}
+
+/* ==========================================================================
+   FORMULA 1 RACING THEMED SCROLLBARS
+   ========================================================================== */
+
+/* Standard CSS Scrollbars (Firefox & W3C compliant) */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #e10600 #101015;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #e10600 #15151e;
+}
+
+/* WebKit / Chromium / Edge / Safari Global Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+  background-color: #101015;
+}
+
+/* Track - Dark asphalt tarmac with subtle racing track boundary */
+::-webkit-scrollbar-track {
+  background: #101015;
+  border-left: 1px solid #22222a;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  border-left: none;
+  border-top: 1px solid #22222a;
+}
+
+/* Thumb - Signature F1 Racing Red with aerodynamic bevel and inset rim */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e10600 0%, #b30500 100%);
+  border-radius: 5px;
+  border: 2px solid #101015;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: linear-gradient(90deg, #e10600 0%, #b30500 100%);
+}
+
+/* Hover State - DRS / High-Speed Turbo Red Glow */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff2a24 0%, #e10600 100%);
+  border-color: #0c0c10;
+  box-shadow: 0 0 10px rgba(225, 6, 0, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: linear-gradient(90deg, #ff2a24 0%, #e10600 100%);
+  box-shadow: 0 0 10px rgba(225, 6, 0, 0.75), inset 1px 0 1px rgba(255, 255, 255, 0.45);
+}
+
+/* Active State - Full Throttle Apex Intensity */
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #ff4d47 0%, #ff1801 100%);
+  box-shadow: 0 0 14px rgba(255, 24, 1, 0.9), inset 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+::-webkit-scrollbar-thumb:horizontal:active {
+  background: linear-gradient(90deg, #ff4d47 0%, #ff1801 100%);
+  box-shadow: 0 0 14px rgba(255, 24, 1, 0.9), inset 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+/* Corner & Stepper Buttons */
+::-webkit-scrollbar-corner {
+  background: #0d0d12;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 body {
@@ -350,12 +431,23 @@ h1.f1-main-title {
 }
 
 .f1-history-nav-chips::-webkit-scrollbar {
-  height: 4px;
+  height: 5px;
+}
+
+.f1-history-nav-chips::-webkit-scrollbar-track {
+  background: #101015;
+  border-radius: 4px;
 }
 
 .f1-history-nav-chips::-webkit-scrollbar-thumb {
-  background: #38383f;
-  border-radius: 2px;
+  background: linear-gradient(90deg, var(--f1-red) 0%, #b30500 100%);
+  border-radius: 4px;
+  border: 1px solid #101015;
+}
+
+.f1-history-nav-chips::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #ff2a24 0%, #e10600 100%);
+  box-shadow: 0 0 8px rgba(225, 6, 0, 0.7);
 }
 
 .f1-history-chip {
@@ -491,17 +583,23 @@ h1.f1-main-title {
 }
 
 .f1-era-tabs-container::-webkit-scrollbar {
-  height: 5px;
+  height: 6px;
 }
 
 .f1-era-tabs-container::-webkit-scrollbar-track {
-  background: #15151e;
-  border-radius: 3px;
+  background: #101015;
+  border-radius: 4px;
 }
 
 .f1-era-tabs-container::-webkit-scrollbar-thumb {
-  background: #38383f;
-  border-radius: 3px;
+  background: linear-gradient(90deg, var(--f1-red) 0%, #b30500 100%);
+  border-radius: 4px;
+  border: 1px solid #101015;
+}
+
+.f1-era-tabs-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #ff2a24 0%, #e10600 100%);
+  box-shadow: 0 0 8px rgba(225, 6, 0, 0.7);
 }
 
 .f1-era-tab-btn {
@@ -1009,6 +1107,26 @@ h1.f1-main-title {
   border-radius: 8px;
   overflow-x: auto;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.f1-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.f1-table-wrapper::-webkit-scrollbar-track {
+  background: #101015;
+  border-radius: 0 0 8px 8px;
+}
+
+.f1-table-wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--f1-red) 0%, #b30500 100%);
+  border-radius: 4px;
+  border: 1px solid #101015;
+}
+
+.f1-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #ff2a24 0%, #e10600 100%);
+  box-shadow: 0 0 8px rgba(225, 6, 0, 0.7);
 }
 
 .f1-records-table {
